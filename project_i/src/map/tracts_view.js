@@ -21,10 +21,10 @@ export async function getTractsMerged({ per10k = false, windowStart, windowEnd }
   try {
     let counts = null;
     try {
-      counts = await fetchJson('/src/data/tract_crime_counts_last12m.json', { cacheTTL: 10 * 60_000, retries: 1, timeoutMs: 8000 });
+      counts = await fetchJson('./data/tract_crime_counts_last12m.json', { cacheTTL: 10 * 60_000, retries: 1, timeoutMs: 8000 });
     } catch {}
     if (!counts) {
-      counts = await fetchJson('/src/data/tract_counts_last12m.json', { cacheTTL: 10 * 60_000, retries: 1, timeoutMs: 8000 });
+      counts = await fetchJson('./data/tract_counts_last12m.json', { cacheTTL: 10 * 60_000, retries: 1, timeoutMs: 8000 });
     }
     if (counts?.rows) {
       const meta = counts.meta || {};

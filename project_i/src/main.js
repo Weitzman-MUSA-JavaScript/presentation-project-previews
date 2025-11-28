@@ -20,6 +20,7 @@ import { upsertSelectedDistrict, clearSelectedDistrict, upsertSelectedTract, cle
 import { initLegend } from './map/legend.js';
 import { upsertTractsOutline } from './map/tracts_layers.js';
 import { fetchTractsCachedFirst } from './api/boundaries.js';
+import { upsertBufferA } from './map/buffer_overlay.js';
 
 window.__dashboard = {
   setChoropleth: (/* future hook */) => {},
@@ -261,7 +262,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // react to radius changes
   const radiusObserver = new MutationObserver(() => updateBuffer());
-  radiusObserver.observe(document.documentElement, { attributes: false, childList: false, subtree: false });
+  radiusObserver.observe(document.documentElement, { attributes: false, childList: true, subtree: false });
 
   function removeBufferOverlay() {
     for (const id of ['buffer-a-fill','buffer-a-line']) { if (map.getLayer(id)) try { map.removeLayer(id); } catch {} }

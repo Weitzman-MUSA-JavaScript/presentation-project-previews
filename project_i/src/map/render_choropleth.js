@@ -74,16 +74,16 @@ export function renderDistrictChoropleth(map, merged) {
   }
 
   if (!map.getLayer(labelId)) {
-    map.addLayer({
-      id: labelId,
-      type: 'symbol',
-      source: sourceId,
-      layout: {
-        'text-field': ['coalesce', ['get', 'name'], ['get', 'DIST_NUMC']],
-        'text-size': 12,
-      },
-      paint: { 'text-color': '#1f2937', 'text-halo-color': '#fff', 'text-halo-width': 1 }
-    });
+    // map.addLayer({
+    //   id: labelId,
+    //   type: 'symbol',
+    //   source: sourceId,
+    //   layout: {
+    //     'text-field': ['coalesce', ['get', 'name'], ['get', 'DIST_NUMC']],
+    //     'text-size': 12,
+    //   },
+    //   paint: { 'text-color': '#1f2937', 'text-halo-color': '#fff', 'text-halo-width': 1 }
+    // });
   }
 
   return { breaks, colors };

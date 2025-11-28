@@ -83,14 +83,13 @@ export async function fetchTractStats() {
 }
 
 /**
- * Cached-first loader for ACS tract stats. Attempts local JSON under /src/data first
+ * Cached-first loader for ACS tract stats. Attempts local JSON under ./data first
  * then falls back to live endpoints.
  * @returns {Promise<Array<{geoid:string, pop:number|null, renter_total:number|null, renter_count:number|null, median_income:number|null, poverty_pct:number|null}>>}
  */
 export async function fetchTractStatsCachedFirst() {
   const localPaths = [
-    "/src/data/acs_tracts_2023_pa101.json",
-    "/data/acs_tracts_2023_pa101.json",
+    "./data/acs_tracts_2023_pa101.json",
   ];
   for (const p of localPaths) {
     try {

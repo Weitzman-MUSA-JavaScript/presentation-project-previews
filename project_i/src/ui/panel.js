@@ -295,13 +295,13 @@ export function initPanel(store, handlers) {
   preset12?.addEventListener('click', () => { const d = new Date(); const ym = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`; store.startMonth = ym; store.durationMonths = 12; onChange(); });
 
   // --- Status HUD helpers ---
-  let __snapshotMeta = null; // cached in-session
+  var __snapshotMeta = null; // cached in-session
   async function ensureSnapshotMeta() {
     if (__snapshotMeta !== null) return __snapshotMeta;
     // Try to fetch local static JSON; ignore failures
     try {
       const { fetchJson } = await import('../utils/http.js');
-      const snap = await fetchJson('/src/data/tract_crime_counts_last12m.json', { cacheTTL: 5 * 60_000, retries: 0, timeoutMs: 1500 });
+      const snap = await fetchJson('./data/tract_crime_counts_last12m.json', { cacheTTL: 5 * 60_000, retries: 0, timeoutMs: 1500 });
       if (snap?.meta?.start && snap?.meta?.end) {
         __snapshotMeta = { start: snap.meta.start, end: snap.meta.end };
       } else {

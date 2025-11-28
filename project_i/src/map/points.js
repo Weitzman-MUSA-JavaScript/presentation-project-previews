@@ -99,20 +99,20 @@ export async function refreshPoints(map, { start, end, types, queryMode, selecte
 
   // Cluster count labels
   if (!map.getLayer(clusterCountId)) {
-    map.addLayer({
-      id: clusterCountId,
-      type: 'symbol',
-      source: srcId,
-      filter: ['has', 'point_count'],
-      layout: {
-        'text-field': ['to-string', ['get', 'point_count']],
-        'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-        'text-size': 12
-      },
-      paint: {
-        'text-color': '#112'
-      }
-    });
+    // map.addLayer({
+    //   id: clusterCountId,
+    //   type: 'symbol',
+    //   source: srcId,
+    //   filter: ['has', 'point_count'],
+    //   layout: {
+    //     'text-field': ['to-string', ['get', 'point_count']],
+    //     'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+    //     'text-size': 12
+    //   },
+    //   paint: {
+    //     'text-color': '#112'
+    //   }
+    // });
   }
 
   // Unclustered single points

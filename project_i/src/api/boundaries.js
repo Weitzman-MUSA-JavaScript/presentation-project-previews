@@ -19,13 +19,13 @@ export async function fetchTracts() {
 
 /**
  * Cache-first loader for police districts: tries local cached copy
- * at "/data/police_districts.geojson" before falling back to remote.
+ * at "./data/police_districts.geojson" before falling back to remote.
  * @returns {Promise<object>} GeoJSON FeatureCollection
  */
 export async function fetchPoliceDistrictsCachedFirst() {
   // Try cached file served by Vite or static hosting
   try {
-    const local = await fetchGeoJson("/data/police_districts.geojson");
+    const local = await fetchGeoJson("./data/police_districts.geojson");
     if (
       local &&
       local.type === "FeatureCollection" &&
@@ -44,7 +44,7 @@ export async function fetchPoliceDistrictsCachedFirst() {
 
 /**
  * Cache-first loader for census tracts: tries local cached copy
- * at "/data/tracts_phl.geojson" before falling back to remote.
+ * at "./data/tracts_phl.geojson" before falling back to remote.
  * @returns {Promise<object>} GeoJSON FeatureCollection
  */
 export async function fetchTractsCachedFirst() {
@@ -53,7 +53,7 @@ export async function fetchTractsCachedFirst() {
 
   // 1) Try local cache under /public
   try {
-    const local = await fetchGeoJson("/data/tracts_phl.geojson", { cacheTTL: 5 * 60_000 });
+    const local = await fetchGeoJson("./data/tracts_phl.geojson", { cacheTTL: 5 * 60_000 });
     if (isValidTracts(local)) {
       fetchTractsCachedFirst._cache = local;
       return local;
