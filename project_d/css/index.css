@@ -1,0 +1,372 @@
+
+.cover {
+  position: relative;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0 0 0 / 50%); 
+  z-index: 1000;
+}
+
+.cover-image {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  opacity: 0.6;
+}
+
+.cover-title {
+  position: absolute;
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  z-index: 1000;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px rgb(0 0 0/ 70%);
+  letter-spacing: 1px;
+}
+
+.cover-subtitle {
+  font-family: Lora, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgb(255 255 255);
+  margin: 0.5rem 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  text-shadow: 1px 1px 3px rgb(0 0 0/ 60%);
+  font-style: italic;
+}
+
+.cover-author {
+  font-family: Lora, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgb(255 255 255);
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  text-shadow: 1px 1px 2px rgb(0 0 0/ 50%);
+  letter-spacing: 0.5px;
+}
+
+
+body {
+  margin: 0;
+  border-width: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: Lora, serif;
+  background-color: antiquewhite;
+}
+
+.overview h2 { 
+  text-align: center; 
+  font-family: 'Playfair Display', 
+  serif; font-size: 2.5rem; 
+  font-weight: 600; 
+  color: rgb(14 0 0); 
+  margin-bottom: 1.5rem; 
+  text-shadow: 2px 2px 4px rgb(0 0 0/ 20%); 
+} 
+
+.overview p { 
+  font-family: Lora, serif; 
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  color: rgb(15 0 0); 
+  max-width: 800px; 
+  margin: 0 auto; 
+  text-shadow: 1px 1px 2px rgb(0 0 0/ 0%); 
+  margin-bottom:10vh; 
+}
+
+.acknowledgment {   
+  height: 100vh;  
+  width: 100%;    
+  background: linear-gradient(180deg,  rgb(66 77 92),rgb(67 92 92/ 74%));   
+  border: none;
+  margin: 0;
+  padding: 1%;
+  padding-left:5%;
+  box-sizing: border-box;
+  color:#fff;
+}
+
+.acknowledgment h2 {
+  font-size: 1.5rem; 
+}
+
+.acknowledgment li {
+  color:#ffffffcb;
+  font-size: 0.8rem;
+}
+
+.header-emph {
+  font-family:'Courier New', Courier, monospace;
+  color: #059f03;
+  font-weight: 700;
+}
+
+.header-emph1 {
+  font-family:'Courier New', Courier, monospace;
+  color: #042cb0;
+  font-weight: 700;
+}
+
+.important-intext {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.important-intext-level2 {
+  font-weight: bold;
+  color: #042cb0;
+}
+
+.moving-intext {
+  font-weight: bold;
+  color: #5504f6;
+}
+
+.moving-intext-level2 {
+  font-weight: bold;
+  color: #2302a8;
+}
+
+.credits{
+  font-size:0.5rem;
+  color:gray;
+  font-style:italic;
+  margin-top:-1rem;
+  margin-bottom:1rem;
+  display:block;
+}
+
+.map-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 0;
+}
+
+.map {
+  height: 100%;
+}
+
+.slide-section {
+  position: relative;
+  margin-top: -30vh;
+  z-index: 100;
+  pointer-events: none;
+  border-bottom: 1px solid rgb(0 0 0 / 10%);
+}
+
+.slide {
+  margin-top: 90vh;
+  margin-bottom: 90vh;
+  margin-left: auto;
+  margin-right: 2rem;
+  padding: 2rem;
+  box-shadow: -0.5rem 0 2rem rgb(0 0 0 / 40%), 0 8px 32px rgb(0 0 0 / 20%);
+  border: none;
+  border-radius: 1rem;
+  pointer-events: initial;
+  width: 25rem;
+  background: rgb(255 255 255 / 95%);
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+  box-shadow: -0.5rem 0 3rem rgb(0 0 0 / 50%), 0 12px 40px rgb(0 0 0 / 25%);
+}
+
+.slide h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.slide p {
+  font-family: Lora, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.slide:first-child {
+  margin-top: 0;
+}
+
+.slide:last-child {
+  margin-bottom: 40vh;
+}
+
+.slide-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 0.5rem;
+
+  width: 100%;
+}
+
+.slide-nav-button {
+  transition: all 0.1s;
+  padding: 0;
+  margin: 1rem;
+  width: 4rem;
+  height: 3rem;
+  border: 1px solid #888;
+  border-radius: 0.25rem;
+
+  background-color: #eee;
+  font-size: 1.5em;
+}
+
+.slide-nav-button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.slide-nav-select {
+  min-width: 0;
+}
+
+.inline-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 20%);
+}
+
+.slide-icon {
+  width: 48px;
+  height: 48px;
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slide-icon:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+ul {
+  padding-left: 1.3rem;
+  text-align: left;
+  font-family: Lora, serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+.li-explain{
+  font-style: italic;
+  font-size: 0.7rem;
+  color: #0546b7;
+}
+
+.background-images {
+  position: sticky;       /* stick it to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;         
+  z-index: -1;           
+}
+
+.background-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  opacity: 0.95;
+}
+
+@media screen and (width < 480px) {
+  .cover-title {
+    font-size: 1.5rem;
+  }
+
+  .cover-image{
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .cover-subtitle {
+    font-size: 1rem;
+  }
+
+  .cover-author {
+    font-size: 0.8rem;
+  }
+
+  .overview {
+    margin: 1rem;
+    min-height: 50vh;
+  }
+
+  .overview-overlay {
+    padding: 2rem 1rem;
+  }
+
+  .overview h2 {
+    font-size: 2rem;
+  }
+
+  .overview p {
+    font-size: 1rem;
+  }
+
+  .slide {
+    width: 20rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+  }
+
+  .slide h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide p {
+    font-size: 0.9rem;
+  }
+
+  .acknowledgment {
+    padding: 2rem 1rem;
+  }
+
+  .acknowledgment h2 {
+    font-size: 2rem;
+  }
+
+  .acknowledgment p {
+    font-size: 1rem;
+  }
+}

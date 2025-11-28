@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mexico City High Capacity Transit storymap</title>
+  <link rel="icon" type="image/svg+xml" href="pic/brt-icon.svg" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <div class="cover">
+    <img src="pic/Metrobus-CDMX.jpg" alt="Cover Image" class="cover-image">
+    <h1 class="cover-title">Inside Mexico City’s High-Capacity Transit</h1>
+    <h3 class="cover-subtitle">Metro and Metrobús shaping flows of people, places, and possibility</h3>
+    <p class="cover-author">By: Zhanchao Yang | Date: 2025.09.24</p>
+  </div>
+  <div class="overview">
+    <h2>Overview</h2>
+    <p >Spanning one of the world’s largest urban regions, 
+      Mexico City’s high-capacity network combines the grade-separated speed of the Metro with the surface reach of Metrobús.
+      It connect local residents from their neighborhoods to job centers, schools, and services. 
+      Frequent service, intuitive wayfinding, and expanding fare integration (MI card) simplify door-to-door trips and make transfers more legible across modes. 
+      Recent investments prioritize core reliability—track and power upgrades, station renewals, fleet modernization, and growing zero-emission buses—while safety, accessibility, and comfort improvements further open the system to all users with confidence. 
+      First- and last-mile projects—safer crossings, sidewalks, bike links, and feeder routes extended the network’s catchment and reduce dependence on private cars. 
+      By shifting trips from autos to rail and busways, the system cuts congestion, improves air quality, and reclaims street space for people, and create more vibrant public places. 
+      <span class="important-intext">This storymap explores how Metro and Metrobús together shape daily mobility and how the next wave of upgrades can deliver faster, fairer, and more resilient travel for all chilangos.</span></p>
+  </div>
+  <main>
+    <div class="map-container">
+      <div class="map" id="map"></div>
+    </div>
+    <section class="slide-section">
+      <article class="slide" id="title-slide">
+        <h2>Introduction</h2>
+        <p>Mexico City’s high-capacity transit anchors daily life at a metropolitan scale. 
+          The Metro,one of the busiest systems in the Americas,connected distant neighborhoods through fast, grade-separated service, 
+          while Metrobús extends high-reliability corridors along the surface. 
+          <span class="important-intext">Together they shape flows of people, place, and possibility.</span></p>
+        <img src="pic/city-overview.jpg" alt="Mexico City Overview" class="inline-image">
+        <span class="credits">Image Source: https://www.mexperience.com/mexico-city-to-be-known-as-mexico-city/</span>
+      </article>
+
+      <article class="slide" id="metro-origins">
+        <img src="pic/metro-icon.svg" alt="Metro Icon" class="slide-icon">
+        <h2>Metro: <span class="header-emph"> Origin</span></h2>
+        <p>Opened in 1969 with an initial set of centrally focused stations, 
+          the Metro was designed to mitigate the congestion and support a rapidly growing capital. 
+          Color-coded lines and distinctive station pictograms simplified wayfinding and quickly became part of the city’s visual identity. 
+          Rubber-tired trains enabled fast expansion through the 1970s and 1980s.</p>
+        <img src="pic/metro_map.jpg" alt="Metro system Map" class="inline-image">
+        <span class="credits">Image Source: https://metro.cdmx.gob.mx/</span>
+        <p><span class="important-intext">Metro Line 1</span>, also known as the "Pink Line," was the first line inaugurated in the system, opening on September 4, 1969. 
+          It runs from Pantitlán in the east to Observatorio in the west, covering key central areas and serving as one of the busiest lines in the network. </p>
+        <img src="pic/original_metro.jpg" alt="Earliest Metro Map" class="inline-image">
+        <span class="credits">Image Source: https://en.wikipedia.org/wiki/Mexico_City_Metro</span>
+      </article>
+
+      <article class="slide" id="metro-today-upgrades">
+        <img src="pic/metro-icon.svg" alt="Metro Icon" class="slide-icon">
+        <h2>Metro:<span class="header-emph">Today & Upgrades</span></h2>
+        <p>Today the Metro spans a dozen lines and nearly two hundred stations, providing frequent service from early morning until midnight across key radial and cross-town corridors. </p>
+        <p>Recent investment has focused on:</p>
+        <ul>
+          <li>Modernizing core infrastructure: <span class="li-explain">overhauling track, power, and stations</span></li>
+          <li>Renewing rolling stock </li>
+          <li>Improving operations <span class="li-explain">on the busiest lines—to stabilize service and reduce delay</span> </li>
+          <li>upgrades to wayfinding, lighting, and passenger information <span class="li-explain">to make complex transfers more legible and reliable</span> </li>
+        </ul>
+        <img src="pic/wayfinding.png" alt="Wayfinding Summary Image" class="inline-image">
+        <span class="credits">Image Source: https://metro.cdmx.gob.mx/</span>
+      </article>
+
+      <article class="slide" id="metro-experience-safety">
+        <img src="pic/metro-icon.svg" alt="Metro Icon" class="slide-icon">
+        <h2>Metro: <span class="header-emph">Rider Experience & Safety</span></h2>
+        <p>Crowded peaks and long interchanges define many commuter journeys, <span class="important-intext">but station redesigns, platform management, and targeted crowd control</span> can ease pinch points. </p>
+        <p>Recently, Mexico City Metro launched many <span class="important-intext">initiatives ranged from improved lighting and CCTV</span> around staffed areas during peak hours to address harassment and enhance perceived and actual safety. </p>
+        <p>In addition, Mexico City Metro also improve their system on <span class="important-intext"> escaslator platform edge</span>, which also contribute to a more comfortable rider experience.</p>
+        <img src="pic/metro-peak.jpg" alt="Peak Hour Metro" class="inline-image">
+        <span class="credits">Image Source: https://www.istockphoto.com/photos/metro-ciudad-de-mexico</span>
+      </article>
+
+      <article class="slide" id="metrobus-origins">
+        <img src="pic/brt-icon.svg" alt="BRT Icon" class="slide-icon">
+        <h2>Metrobús: <span class="header-emph">Origins</span></h2>
+        <p>Launched in 2005, Metrobús introduced center-running busways with off-board fare collection and level boarding, delivering <strong>“metro-like”</strong> reliability at street level. 
+          The first corridors targeted high-demand arterials where buses previously competed with mixed traffic. 
+          Stations were designed for <span class="important-intext">quick dwell times and seamless transfers</span> to the Metro, cycling networks, and walkable district centers.</p>
+        <img src="pic/brt.jpg" alt="BRT Image" class="inline-image">
+        <span class="credits">Image Source: https://www.bnamericas.com/en/news/mexico-citys-7th-brt-line-begins-operations</span>
+      </article>
+
+      <article class="slide" id="metrobus-growth-electrification">
+        <img src="pic/brt-icon.svg" alt="BRT Icon" class="slide-icon">
+        <h2>Metrobús: <span class="header-emph">Growth & Electrification</span></h2>
+        <p>Over time, Metrobús expanded along multiple corridors to connect major hubs - <span class="important-intext-level2"> historic center, Reforma, and key intermodal station, with airport access via dedicated alignments</span>. 
+          Fleet renewal emphasizes higher-capacity articulated vehicles and a growing share of zero-emission buses. 
+          Planned extensions and orbital links aim to relieve pressure on radial routes, shorten crosstown trips, and cut tailpipe emissions along the city’s busiest roads.</p>
+        <img src="pic/brt-green.jpeg" alt="Metrobús system Map" class="inline-image">
+        <span class="credits">Image Source: https://www.urban-transport-magazine.com/en/mexico-city-an-elevated-brt-trolleybus/</span>
+      </article>
+    </section>
+
+
+    <section class="slide-section">
+    <div class="background-images">
+      <img src="pic/cable.jpg" alt="background-images">
+    </div>
+      <article class="slide" id="integration-fares">
+        <h2>Integration: <span class="header-emph">Transfers and the MI Card</span></h2>
+        <p>A unified <span class="important-intext">card system  simplify interchanges between Metro, Metrobús, and other modes. </span> 
+          Clearer wayfinding at shared stations, shaded and traffic-calmed walking links, and bike parking expand the reach of each corridor. 
+          As more services align fare media and transfer policies, door-to-door trips become <span class="important-intext-level2">predictable and easier to plan.</span></p>
+        <img src="pic/farecard.jpg" alt="MI Transit Card" class="inline-image">
+      </article>
+    </section>
+    <section class="slide-section">
+      <div class="background-images">
+        <img src="pic/equity.avif" alt="background-images">
+      </div>
+      <article class="slide" id="equity-access">
+        <h2>Equity & Access</h2>
+        <p>High-capacity transit can widen opportunity by <span class="important-intext">shrinking travel times to jobs and schools</span>, but many peripheral neighborhoods remain beyond comfortable walking distance. 
+          Priority projects should focus on <span class="important-intext-level2">first-/last-mile connections.</span><br>
+          <span class="important-intext">Safer crossings, improved sidewalks, feeder buses, and bike links</span> is crucial to maximum the capacity and potential for mass transit. 
+          So riders do not face a “last barrier” between home and the network. 
+          <span class="important-intext">Accessibility retrofits—ramps, elevators, tactile paving—help</span> ensure the system works for all ages and abilities.</p>
+          <img src="pic/station.jpg" alt="station Image" class="inline-image">
+          <span class="credits">Image Source: https://mexicobusiness.news/infrastructure/news/mexico-city-metro-operates-us14-billion-deficit</span>
+      </article>
+    </section>
+    <section class="slide-section">
+      <div class="background-images">
+        <img src="pic/climate.jpg" alt="background-images">
+      </div>
+      <article class="slide" id="climate-public-space">
+        <h2>Climate & Public Space</h2>
+        <p>Mode shift from cars to Metro and Metrobús <span class= "important-intext">lowers carbon emissions, reduces congestion, and frees street space</span> for safer walking and cycling. 
+          <span class= "important-intext"> Streetscape</span> around stations such as <span class="important-intext">trees, shade, seating, and storm water management features</span>, create <span class= "important-intext-level2">cooler microclimates </span> and dignified the waiting areas. <br>
+          As fleets transition toward cleaner propulsion, operational emissions fall while air quality improves along high-traffic avenues.</p>
+      </article>
+    </section>
+    <section class="slide-section">
+      <div class="background-images">
+        <img src="pic/operations.jpg" alt="background-images">
+      </div>
+      <article class="slide" id="resilience-maintenance">
+        <h2>Operations, Resilience & Maintenance</h2>
+        <p>Keeping a megacity moving depends on core basics: <span class="important-intext">preventative maintenance, parts availability, and incident response</span>.<br> 
+          Investments in power redundancy, drainage, and monitoring systems help the network cope with heavy rains and service disruptions. 
+          Transparent performance reporting and rider feedback loops build trust, guiding targeted fixes where they matter most.</p>
+      </article>
+    </section>
+
+    <section class="slide-section">
+      <div class="background-images">
+        <img src="pic/ending.jpg" alt="background-images">
+      </div>
+      <article class="slide" id="whats-next">
+        <h2><span class="header-emph1">Moving Forward</span></h2>
+        <p>The next chapter emphasizes <span class="moving-intext">reliable core service, zero-emission surface fleets, and equitable coverage in underserved areas</span>. <br>
+          <span class="moving-intext-level2">Completing orbital links, strengthening interchanges, and upgrading stations</span> will unlock faster cross-city travel while supporting safer streets and more vibrant public spaces. <br>
+          <span class="moving-intext-level2">Metro plus Metrobús,reinforced by walking and cycling</span> form the backbone of a healthier, more connected, and more resilient Mexico City.</p>
+      </article>
+    </section>
+  </main>
+
+  <div class="acknowledgment">
+    <h2>Acknowledgments</h2>
+    <ul>
+      <li> Data sources: https://mexicocity.cdmx.gob.mx/ </li>
+      <li> Special thanks to the <strong>Sistema de Transporte Colectivo Metro</strong> and <strong>Metrobús</strong> for their ongoing commitment to serving millions of residents daily.</li>
+      <li> We are grateful to <strong>Dr. Erick Guerra </strong> for his research on the Mexico City transit system, which inspired this storymap</li>
+      <li> Thanks also to <strong>Prof. Mjombe Poe </strong> for his valuable technical support.</li>
+    </ul>
+      <span class="important-intext">This project aims to highlight the vital role of public transit in creating more sustainable, equitable, and connected cities.</span></p>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/index.js" type="module"></script>
+</body>
+</html>
